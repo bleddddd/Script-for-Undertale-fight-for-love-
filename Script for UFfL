@@ -74,3 +74,5 @@ Section:NewButton("Esp for all(Not recommended)", "ButtonInfo", function()
     end
 end
 end)
+
+--OR JUST USE loadstring(game:HttpGet("https://raw.githubusercontent.com/bleddddd/Script-for-Undertale-fight-for-love-/main/Script%20for%20UFfL"))()
