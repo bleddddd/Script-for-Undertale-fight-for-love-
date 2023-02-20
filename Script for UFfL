@@ -1,0 +1,76 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+
+local Window = Library.CreateLib("Fight for love", "RJTheme3")
+
+local Tab = Window:NewTab("Main")
+
+local Section = Tab:NewSection("Main x2")
+
+Section:NewButton("100 скорость", "ButtonInfo", function()
+     while game:GetService("RunService").RenderStepped:wait() do
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+    end
+end)
+
+Section:NewButton("Стандартная скорость", "ButtonInfo", function()
+     while game:GetService("RunService").RenderStepped:wait() do
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 15
+    end
+end)
+
+local Tab = Window:NewTab("Teleports")
+
+local Section = Tab:NewSection("Main")
+
+Section:NewButton("Hotland", "ButtonInfo", function()
+    game:GetService("Workspace").twoxxilian.HumanoidRootPart.CFrame = game:GetService("Workspace").telepartHotland.CFrame
+end)
+
+Section:NewButton("WaterFall", "ButtonInfo", function()
+   game:GetService("Workspace").twoxxilian.HumanoidRootPart.CFrame = game:GetService("Workspace").telepartWaterfall.CFrame
+end)
+
+Section:NewButton("Shop in Snowdin", "ButtonInfo", function()
+   game:GetService("Workspace").twoxxilian.HumanoidRootPart.CFrame = game:GetService("Workspace").Shop2Active.CFrame
+end) 
+
+Section:NewButton("ink and error shop", "ButtonInfo", function()
+    game:GetService("Workspace").twoxxilian.HumanoidRootPart.CFrame = game:GetService("Workspace").Ink.CFrame
+end)
+
+Section:NewButton("Asgore", "ButtonInfo", function()
+    game:GetService("Workspace").twoxxilian.HumanoidRootPart.CFrame = game:GetService("Workspace").AntiGlitch.CFrame
+end)
+
+Section:NewButton("Core", "ButtonInfo", function()
+    game:GetService("Workspace").twoxxilian.HumanoidRootPart.CFrame = game:GetService("Workspace").telepartM.CFrame
+end)
+
+Section:NewButton("Barrier", "ButtonInfo", function()
+    game:GetService("Workspace").twoxxilian.HumanoidRootPart.CFrame = game:GetService("Workspace").TeleportToBarrier.CFrame
+end)
+
+local Tab = Window:NewTab("Esp")
+
+local Section = Tab:NewSection("Esp x2")
+
+Section:NewButton("Esp for all(Not recommended)", "ButtonInfo", function()
+    while wait(0.5) do
+    for i, childrik in ipairs(workspace:GetDescendants()) do
+        if childrik:FindFirstChild("Humanoid") then
+            if not childrik:FindFirstChild("EspBox") then
+                if childrik ~= game.Players.LocalPlayer.Character then
+                    local esp = Instance.new("BoxHandleAdornment",childrik)
+                    esp.Adornee = childrik
+                    esp.ZIndex = 0
+                    esp.Size = Vector3.new(4, 5, 1)
+                    esp.Transparency = 0.65
+                    esp.Color3 = Color3.fromRGB(255,48,48)
+                    esp.AlwaysOnTop = true
+                    esp.Name = "EspBox"
+                end
+            end
+        end
+    end
+end
+end)
